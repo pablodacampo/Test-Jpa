@@ -1,6 +1,7 @@
 package jpa01.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,17 +13,23 @@ public class Livre {
 	@Id
 	private int id;
 	
-	@Column(name = "TITRE",length = 255,
-			nullable = false)
-	private String titre;
-	
-	@Column(name = "AUTEUR",length = 50,
-			nullable = false)
-	private String auteur;
+	@Embedded
+	private Auteur auteurEmbedd;
 	
 	
-	public Livre() {
+	public Auteur getAuteur() {
+		return auteurEmbedd;
+	}
 
+
+	public void setAuteur(Auteur auteur) {
+		this.auteurEmbedd = auteur;
+	}
+
+
+	public Livre() {
+		// TODO Auto-generated constructor stub*
+		this.auteurEmbedd = new Auteur();
 	}
 
 
@@ -36,29 +43,9 @@ public class Livre {
 	}
 
 
-	public String getTitre() {
-		return titre;
-	}
-
-
-	public void setTitre(String titre) {
-		this.titre = titre;
-	}
-
-
-	public String getAuteur() {
-		return auteur;
-	}
-
-
-	public void setAuteur(String auteur) {
-		this.auteur = auteur;
-	}
-
-
 	@Override
 	public String toString() {
-		return "Livre [id=" + id + ", titre=" + titre + ", auteur=" + auteur + "]";
+		return "Livre [id=" + id +  "]";
 	}
 
 	

@@ -19,7 +19,6 @@ public class TestJpa {
 	public void init() {
 		factory = Persistence.createEntityManagerFactory("pu_essai");
 	}
-	
 	@Test
 	public void findLivre() {
 		EntityManager em = factory.createEntityManager();
@@ -31,7 +30,6 @@ public class TestJpa {
 		em.close();
 		factory.close();
 	}
-	
 	@Test
 	public void listeLivres( ) {
 		EntityManager em = factory.createEntityManager();
@@ -46,7 +44,6 @@ public class TestJpa {
 		em.close();
 		factory.close();
 	}
-	
 	@Test
 	public void listeLivresWhere( ) {
 		EntityManager em = factory.createEntityManager();
@@ -66,14 +63,14 @@ public class TestJpa {
 	public void insertLivre( ) {
 		EntityManager em = factory.createEntityManager();
 		Livre l = new Livre();
-		l.setId(7);
-		l.setAuteur("Boris J");
-		l.setTitre("The Brexit");
-		//I open a transaction
+		l.setId(6);
+		l.getAuteur().setAuteur("Victor hugo");
+		l.getAuteur().setTitre("Les Mis�rables");
+		//J'ouvre une transaction
 		em.getTransaction().begin();
-		//I add my new Book to the BDD
+		//j'ajoute dans la BDD mon nouveau Livre
 		em.persist(l);
-		//I commit and close the transaction
+		//Je commite et ferme la transaction
 		em.getTransaction().commit();
 		em.close();
 		factory.close();
@@ -82,11 +79,11 @@ public class TestJpa {
 	@Test
 	public void updateLivre( ) {
 		EntityManager em = factory.createEntityManager();
-		//I open a transaction
+		//J'ouvre une transaction
 		em.getTransaction().begin();
 		//Find transcient : transactionnel
 		Livre l = em.find(Livre.class,5);
-		l.setTitre("Du plaisir dans la cuisine");
+		l.getAuteur().setTitre("Les Orientales");
 		//j'ajoute dans la BDD mon nouveau Livre
 		em.merge(l);
 		//Je commite et ferme la transaction
@@ -98,7 +95,7 @@ public class TestJpa {
 	@Test
 	public void deleteLivre( ) {
 		EntityManager em = factory.createEntityManager();
-		//I open a transaction
+		//J'ouvre une transaction
 		em.getTransaction().begin();
 		//Find transcient : transactionnel
 		Livre l = em.find(Livre.class,6);
@@ -110,19 +107,6 @@ public class TestJpa {
 		factory.close();
 	}
 	
-	@Test
-	public void listeTousLivres( ) {
-		EntityManager em = factory.createEntityManager();
-		
-		if(em != null ) {
-			String query = "SELECT ID, TITRE, AUTEUR FROM livre";
-			TypedQuery<Livre> q = em.createQuery(query, Livre.class);
-			for(Livre l : q.getResultList()) {
-				System.out.println(l);
-			}
-		}
-		em.close();
-		factory.close();
-	}
+	
 	
 }
