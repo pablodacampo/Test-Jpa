@@ -42,11 +42,32 @@ private EntityManagerFactory factory = null;
 		c.setAdresse(a);
 		em.persist(c);
 		
-		Compte cpte = new Compte();
-		cpte.setSolde(150);
+		LivretA cpte = new LivretA();
+		cpte.setSolde(new Double(150));
+		cpte.setTaux(1.25);
 		cpte.getListeClient().add(c);
 		
 		em.persist(cpte);
+		
+		ClientB c2 = new ClientB();
+		Adresse a2 =  new Adresse();
+		a2.setCodepostal(24000);
+		a2.setNumero(20);
+		a2.setRue("rue principale");
+		a2.setVille("Perigueux");
+		em.persist(b);
+		c2.setDateNaissance(new Date());
+		c2.setBanque(b);
+		c2.setAdresse(a);
+		em.persist(c2);
+		
+		AssuranceVie cpte2 = new AssuranceVie();
+		cpte2.setSolde(new Double(1500));
+		cpte2.setTaux(1.25);
+		cpte2.setDateFin(new Date());
+		cpte2.getListeClient().add(c2);
+		
+		em.persist(cpte2);
 		
 		//Je commite et ferme la transaction
 		em.getTransaction().commit();

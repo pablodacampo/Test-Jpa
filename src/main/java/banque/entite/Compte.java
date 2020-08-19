@@ -1,25 +1,32 @@
 package banque.entite;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+
 @Entity
-@Table(name="Compte")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="TYPE")
 public class Compte {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private double solde;
+	private Double solde;
+	
 	
 	@ManyToMany
 	@JoinTable(name = "Comptes_clients",
@@ -39,11 +46,11 @@ public class Compte {
 		this.id = id;
 	}
 
-	public double getSolde() {
+	public Double getSolde() {
 		return solde;
 	}
 
-	public void setSolde(double solde) {
+	public void setSolde(Double solde) {
 		this.solde = solde;
 	}
 

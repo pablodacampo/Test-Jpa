@@ -31,6 +31,9 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 		<class>banque.entite.ClientB</class>
 		<class>banque.entite.Compte</class>
 		<class>banque.entite.Operation</class>
+		<class>banque.entite.AssuranceVie</class>
+		<class>banque.entite.Virement</class>
+		<class>banque.entite.LivretA</class>
 		<properties>
 		<!-- desactiver l'autodetection des classes de type @Entity -->
 		<property name="hibernate.archive.autodetection" value="" />
