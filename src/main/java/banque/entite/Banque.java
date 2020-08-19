@@ -1,25 +1,22 @@
-package jpa01.modeleleves;
+package banque.entite;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 @Entity
-@Table(name = "t_classe")
-public class Classe {
+@Table(name="Banque")
+public class Banque {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	private String nom;
 	
-	@ManyToOne
-	@JoinColumn(name = "prof")
-	private Professeur profClasse;
+	public Banque() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Integer getId() {
 		return id;
@@ -36,15 +33,6 @@ public class Classe {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
-	public Professeur getProf() {
-		return profClasse;
-	}
-
-	public void setProf(Professeur prof) {
-		this.profClasse = prof;
-	}
-	
 	
 	
 
