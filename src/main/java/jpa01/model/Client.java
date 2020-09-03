@@ -12,13 +12,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * 
- * @author avosclics
- *
  * Entity Client 
- * Lié avec Emprunt (par ma clé étrangère ID_client qui est la colonne SQL de la 
+ * Liï¿½ avec Emprunt (par ma clï¿½ ï¿½trangï¿½re ID_client qui est la colonne SQL de la 
  * table Emprunt cette colonne va devenir par un attribut clientE par le lien
- * @ManyToOne implémenté dans l'entity Emprunt
+ * @ManyToOne implï¿½mentï¿½ dans l'entity Emprunt
  */
 
 @Entity

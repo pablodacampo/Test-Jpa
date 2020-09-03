@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -16,10 +15,6 @@ public class AssuranceVie extends Compte {
 	private Date dateFin;
 	
 	private Double taux;
-	
-	public AssuranceVie() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public Date getDateFin() {
 		return dateFin;
@@ -37,6 +32,4 @@ public class AssuranceVie extends Compte {
 		this.taux = taux;
 	}
 	
-	
-
 }

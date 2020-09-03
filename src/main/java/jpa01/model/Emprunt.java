@@ -18,14 +18,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- * 
- * @author avosclics
- * Entity Emprunt qui a une clé foreignkey matérialisée par 
+ *
+ * Entity Emprunt qui a une clï¿½ foreignkey matï¿½rialisï¿½e par 
  * @ManyToOne
  * @JoinColumn(name="ID_CLIENT",nullable = false)
  * private Client clientE;
  * 
- * Je vais utiliser @JoinTable pour récupérer les livres Empruntés
+ * Je vais utiliser @JoinTable pour rï¿½cupï¿½rer les livres Empruntï¿½s
  * dans la table "relation" COMPO
  * @ManyToMany
  * @JoinTable(name = "COMPO",

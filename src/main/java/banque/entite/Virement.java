@@ -8,10 +8,6 @@ import javax.persistence.Table;
 public class Virement extends Operation {
 
 	private String beneficiaire;
-	
-	public Virement() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public String getBeneficiaire() {
 		return beneficiaire;

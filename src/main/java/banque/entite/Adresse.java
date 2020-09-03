@@ -2,11 +2,6 @@ package banque.entite;
 
 import javax.persistence.Embeddable;
 
-/**
- * Sous ensemble pour les Entity
- * @author avosclics
- *
- */
 @Embeddable
 public class Adresse {
 
@@ -15,10 +10,6 @@ public class Adresse {
 	private int codepostal;
 	private String ville;
 	
-	public Adresse() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public int getNumero() {
 		return numero;
 	}

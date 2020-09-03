@@ -1,7 +1,5 @@
 package jpa01;
 
-import static org.junit.Assert.*;
-
 import java.util.Date;
 
 import javax.persistence.EntityManager;
@@ -11,7 +9,11 @@ import javax.persistence.Persistence;
 import org.junit.Before;
 import org.junit.Test;
 
-import banque.entite.*;
+import banque.entite.Adresse;
+import banque.entite.AssuranceVie;
+import banque.entite.Banque;
+import banque.entite.ClientB;
+import banque.entite.LivretA;
 
 
 public class TestBanque {
@@ -22,6 +24,7 @@ private EntityManagerFactory factory = null;
 		factory = Persistence.createEntityManagerFactory("banque");
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void insertion() {
 		EntityManager em = factory.createEntityManager();

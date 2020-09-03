@@ -2,16 +2,11 @@ package jpa01.model;
 
 import javax.persistence.Embeddable;
 
-/**
- * Sous ensemble pour les Entity
- * @author avosclics
- *
- */
 @Embeddable
 public class Auteur {
 	/**
 	 * Respecter le nom et le type des colonnes
-	 * il faut que ce soit en cohérence avec la BDD
+	 * il faut que ce soit en cohï¿½rence avec la BDD
 	 * physique
 	 */
 	private String titre;

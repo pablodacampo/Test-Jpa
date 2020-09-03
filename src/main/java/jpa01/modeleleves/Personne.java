@@ -16,12 +16,6 @@ public abstract class Personne {
 	
 	private String nom;
 	private String prenom;
-	
-	
-	public Personne() {
-		// TODO Auto-generated constructor stub
-	}
-
 
 	public Integer getId() {
 		return id;

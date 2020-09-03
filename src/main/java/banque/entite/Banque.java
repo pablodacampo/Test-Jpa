@@ -1,6 +1,7 @@
 package banque.entite;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,10 +14,6 @@ public class Banque {
 	private Integer id;
 	
 	private String nom;
-	
-	public Banque() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public Integer getId() {
 		return id;
